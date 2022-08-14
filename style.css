@@ -10,13 +10,14 @@
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;
-    background: url(./image/2360088-1607067327057_3D\ Living\ room\ Interior\ Mockups20190602_0070.webp) no-repeat;
+    background: url(./image/1.png) no-repeat;
     background-size:cover ;
     background-position: center center;
     font-family: arial;
 }
 .navbar
 {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,7 +30,7 @@
     display: inline-block;
     margin-top: 30px;
 }
-.navbar ul
+ul.nav-items
 {
     display: flex;
     align-items: center;
@@ -38,24 +39,56 @@
     border-bottom: 4px solid #fff;
     padding: 20px;
 }
-.navbar ul li
+.navbar ul li.nav-item
 {
     text-transform: capitalize;
     margin: 10px 30px;
 }
-.navbar ul li:last-child
+.navbar ul li.nav-item:last-child
 {
     display: flex;
     align-items: center;
     gap: 6px;
 }
-.navbar ul li:last-child span.icon 
+.navbar ul li.nav-item:last-child span.icon 
 {
     font-size: 30px;
 }
+.menuIcon
+{
+    color: #fff;
+    font-size: 1.4rem;
+    display: none;
+}
+
+@media screen and (max-width:1132px) {
+    .menuIcon
+    {
+        display: inline;
+    }
+    ul.nav-items
+    {
+        display: none;
+        position: absolute;
+        top:60%;
+        right: 5%;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(25px);
+        border-radius: 10px;
+        font-size: 1.2rem;
+        z-index: 3;
+        flex-direction: column;
+    }
+    .menuIcon:focus ~ ul.nav-items
+    {
+        display: flex;
+    }
+ 
+}
+
 .hero__section
 {
-    position: relative;
+    display: flex;
     margin: 130px 5%;
     color: #fff;
 }
@@ -75,12 +108,10 @@ button.btn
     padding: 15px 40px;
     border-radius: 40px;
 }
-.material-symbols-sharp {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+.pin__point-group
+{
+    position: relative;
+    width: 60%;
 }
 .material-symbols-sharp
 {
@@ -102,8 +133,8 @@ button.btn
 .pin__point_2
 {
     position: absolute;
-    left: 60%;
-    top: 80%;
+    left: 35.3%;
+    top: 50%;
 }
 .pin__point_2::after
 {
@@ -132,7 +163,7 @@ button.btn
 .pin__point_1
 {
     position: absolute;
-    left: 76%;
+    left: 65%;
     top: -20%;
 }
 .pin__point_1::after
@@ -164,4 +195,10 @@ button.btn
 {
     font-weight: 600;
     margin-top: 10px;
+}
+@media screen and (max-width:1182px) {
+    .pin__point-group
+    {
+        display: none;
+    }
 }
